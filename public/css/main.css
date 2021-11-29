@@ -1,0 +1,150 @@
+@import url('./normalize.css');
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  min-width: 1144px;
+  margin: 0;
+  padding: 0;
+  font-family: arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.15;
+  color: #383838;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+a {
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.button {
+  padding: 0;
+  background: 0 0;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  text-align: center;
+  word-break: break-word;
+  word-wrap: wrap;
+  overflow-wrap: break-word;
+  -webkit-transition: color .3s, background-color .3s;
+  transition: color .3s, background-color .3s;
+  outline: 0
+}
+
+.container {
+  width: 1144px;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__title {
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: oblique;
+  text-align: center;
+}
+
+.login__form {
+  width: 350px;
+}
+
+.login__input {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 24px;
+  padding: 15px 14px 13px;
+  font-size: 16px;
+  line-height: 1.1875;
+  color: #383838;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+}
+
+.login__submit {
+  padding: 16px 20px 13px;
+  color: #fff;
+  background-color: #4481c3;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.contacts__title {
+  text-align: center;
+}
+
+.contacts__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.contacts__table td {
+  padding: 10px;
+
+}
+
+.contacts__table-title {
+  font-weight: bold;
+  border-bottom: 1px solid #383838;
+  margin-bottom: 20px;
+}
+
+.contacts__table-input {
+  border: 1px solid #e6e6e6;
+  padding: 5px;
+  color: inherit;
+}
+
+.contacts__table-input:disabled {
+  background-color: inherit;
+  border: none;
+  color: inherit;
+}
+
+.contacts__table-column--active {
+  background-color: #4481c383;
+}
+
+.contacts__table-column:hover{
+  background-color: #4481c383;
+}
+
+.contacts__table-control-column {
+  display: flex;
+  width: 50px;
+  justify-content: space-around;
+}
