@@ -4,7 +4,8 @@ import { ThunkAction } from 'redux-thunk';
 import { State } from './state';
 
 enum ActionType {
-  LoadContacts = 'loadContacts',
+  LoadContacts = 'contacts/loadContacts',
+  ChangeContacts = 'contacts/changeContacts',
 }
 
 type ThunkActionResult<R = Promise<void>> = ThunkAction<R, State, AxiosInstance, Action>;

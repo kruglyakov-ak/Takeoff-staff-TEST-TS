@@ -9,6 +9,14 @@ const loadContacts = createAction(
   }),
 );
 
+const changeContacts = createAction(
+  ActionType.ChangeContacts,
+  (contact: Contact) => ({
+    payload: contact,
+  }),
+);
+
 export {
-  loadContacts
+  loadContacts,
+  changeContacts
 };

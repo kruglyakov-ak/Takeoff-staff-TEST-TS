@@ -7,6 +7,7 @@ const createAPI= (): AxiosInstance  => {
   const api = axios.create({
     baseURL: BACKEND_URL,
     timeout: REQUEST_TIMEOUT,
+    headers: {'Content-Type': 'application/json;charset=utf-8'},
   });
 
   api.interceptors.response.use(

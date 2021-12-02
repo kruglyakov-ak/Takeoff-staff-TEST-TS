@@ -1,6 +1,7 @@
 import { ThunkActionResult } from '../types/action';
 import { Contact } from '../types/contact';
-import { loadContacts } from './action';
+import { ContactPost } from '../types/contact-post';
+import { changeContacts, loadContacts } from './action';
 
 const fetchContactsAction = (): ThunkActionResult =>
   async (dispatch, _getState, api): Promise<void> => {
@@ -8,7 +9,17 @@ const fetchContactsAction = (): ThunkActionResult =>
     dispatch(loadContacts(data));
   };
 
+const updateContactAction = (
+  id: number,
+  request: ContactPost,
+): ThunkActionResult =>
+  async (dispatch, _getState, api): Promise<void> => {
+    const { data } = await api.patch<Contact>(`/contacts/${id}`, request);
+    dispatch(changeContacts(data));
+  };
+
 export {
-  fetchContactsAction
+  fetchContactsAction,
+  updateContactAction
 };
 

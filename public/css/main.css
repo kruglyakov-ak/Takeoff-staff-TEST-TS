@@ -139,8 +139,12 @@ a {
   background-color: #4481c383;
 }
 
-.contacts__table-column:hover{
+.contacts__table-column:hover {
   background-color: #4481c383;
+}
+
+.contacts__table-control-column img {
+  cursor: pointer
 }
 
 .contacts__table-control-column {
