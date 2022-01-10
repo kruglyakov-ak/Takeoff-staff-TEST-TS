@@ -6,6 +6,7 @@ import { State } from './state';
 enum ActionType {
   LoadContacts = 'contacts/loadContacts',
   ChangeContacts = 'contacts/changeContacts',
+  DeleteContacts = 'contacts/deleteContacts',
 }
 
 type ThunkActionResult<R = Promise<void>> = ThunkAction<R, State, AxiosInstance, Action>;

@@ -18,8 +18,18 @@ const updateContactAction = (
     dispatch(changeContacts(data));
   };
 
+const deleteContactAction = (
+  id: number,
+): ThunkActionResult =>
+  async (dispatch, _getState, api): Promise<void> => {
+    await api.delete<Contact>(`/contacts/${id}`);
+    const { data } = await api.get<Contact[]>('/contacts');
+    dispatch(loadContacts(data));
+  };
+
 export {
   fetchContactsAction,
-  updateContactAction
+  updateContactAction,
+  deleteContactAction
 };
 

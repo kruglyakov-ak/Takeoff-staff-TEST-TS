@@ -1,0 +1,32 @@
+{
+  "contacts": [
+  {
+    "name": "Test",
+    "email": "test@test.com",
+    "tel": "+123456789",
+    "id": "1"
+  },
+  {
+    "name": "Test",
+    "email": "test@test.com",
+    "tel": "+123456789",
+    "id": "2"
+  },
+  {
+    "name": "Test",
+    "email": "test@test.com",
+    "tel": "+123456789",
+    "id": "3"
+  },
+  {
+    "name": "Test",
+    "email": "test@test.com",
+    "tel": "+123456789",
+    "id": "4"
+  }
+],
+  "profile": {
+    "email": "admin@email.com",
+    "password": "1234"
+  }
+}

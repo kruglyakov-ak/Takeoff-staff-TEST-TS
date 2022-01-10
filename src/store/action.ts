@@ -16,7 +16,15 @@ const changeContacts = createAction(
   }),
 );
 
+const deleteContact = createAction(
+  ActionType.ChangeContacts,
+  (id: number) => ({
+    payload: id,
+  }),
+);
+
 export {
   loadContacts,
-  changeContacts
+  changeContacts,
+  deleteContact
 };

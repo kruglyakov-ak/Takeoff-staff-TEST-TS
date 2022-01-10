@@ -6,7 +6,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import { reducer } from './store/reducer';
 import App from './components/app/app';
 import { createAPI } from './services/api';
-import { fetchContactsAction } from './store/api-actoins';
 
 const api = createAPI();
 
@@ -19,8 +18,6 @@ const store = configureStore({
       },
     }),
 });
-
-(store.dispatch)(fetchContactsAction());
 
 ReactDOM.render(
   <React.StrictMode>
