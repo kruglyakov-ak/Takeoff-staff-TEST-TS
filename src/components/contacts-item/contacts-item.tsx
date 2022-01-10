@@ -1,20 +1,15 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateContactAction } from '../../store/api-actoins';
+import { NameInputs } from '../../const';
+import { deleteContactAction, updateContactAction } from '../../store/api-actoins';
 import { Contact } from '../../types/contact';
 
-enum NameInputs {
-  Name = 'name',
-  Email = 'email',
-  Tel = 'tel'
-}
 
 type ContactsItemProps = {
   contact: Contact,
-  onDeleteContact: (id: number) => void,
 }
 
-function ContactsItem({ contact, onDeleteContact }: ContactsItemProps): JSX.Element {
+function ContactsItem({ contact }: ContactsItemProps): JSX.Element {
   const dispatch = useDispatch();
   const {
     name,
@@ -65,7 +60,7 @@ function ContactsItem({ contact, onDeleteContact }: ContactsItemProps): JSX.Elem
   };
 
   const handleDeleteContact = () => {
-    onDeleteContact(id);
+    dispatch(deleteContactAction(id));
     setIsDeleteChangeMode(!setIsDeleteChangeMode);
   };
 
@@ -74,16 +69,14 @@ function ContactsItem({ contact, onDeleteContact }: ContactsItemProps): JSX.Elem
       case isActiveChangeMode:
         return (
           <td>
-            <p>Change contact?</p>
-            <input type="submit" value="Ok" onClick={handleSubmitChangeContact} />
+            <input type="submit" value="Change" onClick={handleSubmitChangeContact} />
             <input type="button" value="Cancel" onClick={handleClickChangeContact} />
           </td>
         );
       case isActiveDeleteMode:
         return (
           <td>
-            <p>Delete contact?</p>
-            <input type="submit" value="Ok" onClick={handleDeleteContact} />
+            <input type="submit" value="Delete" onClick={handleDeleteContact} />
             <input type="button" value="Cancel" onClick={handleClickDeleteContact} />
           </td>
         );
