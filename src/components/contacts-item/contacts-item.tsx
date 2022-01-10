@@ -24,6 +24,7 @@ function ContactsItem({ contact, onDeleteContact }: ContactsItemProps): JSX.Elem
   } = contact;
 
   const [isActiveChangeMode, setIsActiveChangeMode] = useState(false);
+  const [isActiveDeleteMode, setIsDeleteChangeMode] = useState(false);
   const [nameValue, setNameValue] = useState<string>(name);
   const [emailValue, setEmailValue] = useState<string>(email);
   const [telValue, setTelValue] = useState<string>(tel);
@@ -38,6 +39,10 @@ function ContactsItem({ contact, onDeleteContact }: ContactsItemProps): JSX.Elem
     setEmailValue(email);
     setTelValue(tel);
     setIsActiveChangeMode(!isActiveChangeMode);
+  };
+
+  const handleClickDeleteContact = () => {
+    setIsDeleteChangeMode(!isActiveDeleteMode);
   };
 
   const handleInput = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
@@ -61,18 +66,38 @@ function ContactsItem({ contact, onDeleteContact }: ContactsItemProps): JSX.Elem
 
   const handleDeleteContact = () => {
     onDeleteContact(id);
+    setIsDeleteChangeMode(!setIsDeleteChangeMode);
+  };
+
+  const renderOkButtons = () => {
+    switch (true) {
+      case isActiveChangeMode:
+        return (
+          <td>
+            <p>Change contact?</p>
+            <input type="submit" value="Ok" onClick={handleSubmitChangeContact} />
+            <input type="button" value="Cancel" onClick={handleClickChangeContact} />
+          </td>
+        );
+      case isActiveDeleteMode:
+        return (
+          <td>
+            <p>Delete contact?</p>
+            <input type="submit" value="Ok" onClick={handleDeleteContact} />
+            <input type="button" value="Cancel" onClick={handleClickDeleteContact} />
+          </td>
+        );
+    }
   };
 
   return (
-    <tr className={isActiveChangeMode ?
+    <tr className={isActiveChangeMode || isActiveDeleteMode ?
       'contacts__table-column contacts__table-column--active' :
       'contacts__table-column'}
     >
-      {isActiveChangeMode ?
-        <td>
-          <input type="submit" value="Ok" onClick={handleSubmitChangeContact} />
-          <input type="button" value="Cancel" onClick={handleClickChangeContact} />
-        </td> :
+
+      {isActiveChangeMode || isActiveDeleteMode ?
+        renderOkButtons() :
         <td className="contacts__table-control-column">
           <img
             src='https://img.icons8.com/pastel-glyph/20/000000/ball-point-pen.png'
@@ -85,7 +110,7 @@ function ContactsItem({ contact, onDeleteContact }: ContactsItemProps): JSX.Elem
             src="https://img.icons8.com/office/20/000000/delete-sign.png"
             alt="delete contact"
             title="Delete contact"
-            onClick={handleDeleteContact}
+            onClick={handleClickDeleteContact}
           />
         </td>}
       <td>
