@@ -1,32 +1,29 @@
 {
   "contacts": [
-  {
-    "name": "Test",
-    "email": "test@test.com",
-    "tel": "+123456789",
-    "id": "1"
-  },
-  {
-    "name": "Test",
-    "email": "test@test.com",
-    "tel": "+123456789",
-    "id": "2"
-  },
-  {
-    "name": "Test",
-    "email": "test@test.com",
-    "tel": "+123456789",
-    "id": "3"
-  },
-  {
-    "name": "Test",
-    "email": "test@test.com",
-    "tel": "+123456789",
-    "id": "4"
-  }
-],
-  "profile": {
-    "email": "admin@email.com",
-    "password": "1234"
-  }
+    {
+      "name": "Test",
+      "email": "test@test.com",
+      "tel": "+123456789",
+      "id": "1"
+    },
+    {
+      "name": "Test",
+      "email": "test@test.com",
+      "tel": "+123456789",
+      "id": "2"
+    },
+    {
+      "name": "Test",
+      "email": "test@test.com",
+      "tel": "+123456789",
+      "id": "3"
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@email.com",
+      "password": "$2a$10$JBvH6FmvySqh0TnogjTvN.b/QF/bZptE.wZnbNBrZC3kHD7zXjsKG",
+      "id": 1
+    }
+  ]
 }
