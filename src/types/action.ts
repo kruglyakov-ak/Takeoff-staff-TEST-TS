@@ -4,9 +4,11 @@ import { ThunkAction } from 'redux-thunk';
 import { State } from './state';
 
 enum ActionType {
-  LoadContacts = 'contacts/loadContacts',
-  ChangeContacts = 'contacts/changeContacts',
-  DeleteContacts = 'contacts/deleteContacts',
+  LoadContacts = 'data/loadContacts',
+  ChangeContacts = 'data/changeContacts',
+  DeleteContacts = 'data/deleteContacts',
+  RequireAuthorization = 'user/requireAuthorization',
+  SetCurrentLogin = 'user/setCurrentLogin',
 }
 
 type ThunkActionResult<R = Promise<void>> = ThunkAction<R, State, AxiosInstance, Action>;

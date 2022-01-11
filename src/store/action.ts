@@ -1,4 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
+import { AuthorizationStatus } from '../const';
 import { ActionType } from '../types/action';
 import { Contact } from '../types/contact';
 
@@ -23,8 +24,24 @@ const deleteContact = createAction(
   }),
 );
 
+const requireAuthorization = createAction(
+  ActionType.RequireAuthorization,
+  (authStatus: AuthorizationStatus) => ({
+    payload: authStatus,
+  }),
+);
+
+const setCurrentLogin = createAction(
+  ActionType.SetCurrentLogin,
+  (login: string | undefined) => ({
+    payload: login,
+  }),
+);
+
 export {
   loadContacts,
   changeContacts,
-  deleteContact
+  deleteContact,
+  requireAuthorization,
+  setCurrentLogin
 };
